@@ -1,10 +1,9 @@
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
-import express from 'express';
-
-var app = express(),
+var express = require('express'),
+	app = express(),
 	port = process.env.PORT || 3000,
-	Task = require('./api/models/todoListModel');
+	mongoose = require('mongoose'),
+	Task = require('./api/models/todoListModel'),
+	bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/TodoDB');
